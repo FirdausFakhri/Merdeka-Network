@@ -1,0 +1,694 @@
+:root {
+    --primary: #c41e3a; /* Elegant Red based on Malaysian colors/Logo */
+    --dark: #1a1a1a;
+    --light: #f4f4f4;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* This prevents the horizontal scrollbar */
+    width: 100%;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+    height: 90px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li a {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem; /* Smaller, uppercase text feels more "designer" */
+    text-decoration: none;
+    color: var(--dark);
+    margin: 0 15px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('images/bg1.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for the logo within the Hero */
+.hero-logo {
+    display: flex;
+    flex-direction: column; /* Stack logo image and text vertically */
+    align-items: center;
+    margin-bottom: 60px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-logo img {
+    height: 150px; /* Larger logo for the hero section */
+    margin-bottom: 0px;
+}
+
+
+/* Optional: Add a subtle animation to make the entrance look premium */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: 2px solid var(--white);
+    margin-left: 10px;
+    transition: var(--transition);
+}
+
+.btn-primary:hover { background: #a31830; }
+.btn-secondary:hover { background: var(--white); color: var(--dark); }
+
+/* Our Core Expertise Section with Background */
+.services {
+    padding: 100px 0;
+    /* Replace 'images/bg-services.jpg' with your actual image path */
+    background: linear-gradient(rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9)),  
+                url('images/bg2.png') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.underline {
+    width: 60px;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto;
+}
+
+/* Update this in your style.css 
+.services-grid {
+    display: grid;*/
+    /* This will automatically adjust to 4 columns on large screens and wrap on smaller ones 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 25px;
+}*/
+
+/* Enhanced Service Card Styles */
+.service-card {
+    background: var(--white);
+    padding: 35px 25px;
+    border-radius: 12px;
+    text-align: left; /* Changed to left for better list alignment */
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-header {
+    text-align: center; /* Keep icon and title centered */
+    margin-bottom: 20px;
+}
+
+.service-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: var(--dark);
+}
+
+.service-points {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.service-points li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.service-points li::before {
+    content: "\f00c"; /* FontAwesome check icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+/* Update this in your style.css */
+.services-grid {
+    display: grid;
+    /* Forces exactly 2 columns of equal width */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    max-width: 1000px; /* Optional: centers the 2x2 grid nicely */
+    margin: 0 auto;    /* Optional: centers the grid container */
+}
+
+
+
+
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+/* Vision & Mission Styling */
+.vision-mission {
+    padding: 80px 0;
+    background: #fff;
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.vm-card {
+    background: #fdfdfd;
+    padding: 40px;
+    border-radius: 12px;
+    border-top: 5px solid var(--primary);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.vm-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.vm-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.vm-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.vm-card ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.vm-card ul li::before {
+    content: "\f058"; /* FontAwesome check-circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.section-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 4px; /* Wide tracking on subtitles is a premium trend */
+    text-transform: uppercase;
+    opacity: 0.8;
+    color: var(--primary);
+    
+}
+
+/* Why Choose Us Section with Background */
+.why-choose-us {
+    padding: 100px 0;
+    /* Replace 'images/bg-why.jpg' with your actual image path */
+    background: linear-gradient(rgba(244, 244, 244, 0.9), rgba(244, 244, 244, 0.9)), 
+                url('images/bg2.png') no-repeat center center/cover;
+    background-attachment: fixed; /* Parallax effect */
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.feature-item:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    background: rgba(196, 30, 58, 0.1); /* Light red tint */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.feature-text h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.feature-text p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.contact-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.info-item i {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.info-item p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.contact-map {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Better Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        height: 70px; /* Slimmer for mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+
+    /* This class is added by your script.js */
+    .nav-links.active {
+        display: flex; /* Shown when toggled */
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Better for small screens */
+    }
+
+    .services-grid, .vm-grid, .contact-grid {
+        grid-template-columns: 1fr; /* Force single column on mobile */
+    }
+
+    .contact-map iframe {
+        width: 100%; /* Prevents horizontal scrolling */
+        height: 300px;
+    }
+
+    .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--dark);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-links li a {
+        margin: 0;
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Final Responsive Polish */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px; /* Smaller padding for small phones */
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Shrink text so it doesn't wrap awkwardly */
+    }
+
+    /* Force all images and frames to stay inside the screen */
+    img, iframe, video {
+        max-width: 100% !important;
+        height: auto;
+    }
+    
+    .contact-grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevents the hero section from 'jumping' on mobile when the browser bar hides */
+.hero {
+    min-height: 100svh; 
+}
+
+/* Page Header for Subpages */
+.page-header {
+    background: var(--dark);
+    color: var(--white);
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary);
+}
+
+/* Product Category Layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 80px 20px;
+}
+
+.product-category h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.product-category ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.product-category li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f9f9f9;
+    font-size: 0.95rem;
+}
+
+.btn-text {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+/* Add this to the bottom of your style.css */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.category-image {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This prevents stretching */
+    transition: transform 0.5s ease;
+}
+
+.product-category:hover .category-image img {
+    transform: scale(1.1); /* Zoom effect on hover */
+}
+
+/* Ensure categories have a clean card look */
+.product-category {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    transition: var(--transition);
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    color: var(--brand-orange);
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Medical Hero matching the image */
+.medical-hero {
+    background-color: var(--medical-blue);
+    background-image: url('images/medical-tool-bg.png'); /* Use an image with a stethoscope/syringe */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    margin-top: 80px; /* Offset for fixed navbar */
+}
+
+.medical-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.medical-hero p {
+    max-width: 600px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Text Sections */
+.commitment, .product-intro {
+    padding: 60px 20px;
+}
+
+.commitment h2, .product-intro h2 {
+    color: var(--vark-red);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    max-width: 500px;
+}
+
+.commitment p {
+    color: var(--medical-text-gray);
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+/* Apply this to your sections instead of individual padding */
+.section-spacing {
+    padding: 100px 0; /* Reduced from 80px/100px */
+}
+
+/* Tighten the hero specifically since it's the start */
+.medical-hero {
+    padding: 80px 0 40px; 
+    margin-top: 80px;
+}
+
+.commitment {
+    background-color: var(--light); /* Subtle grey background */
+}
+.product-intro {
+    background-color: var(--white);
+}
+
+.products-grid {
+    gap: 25px; /* Tighter grouping of items */
+    padding-top: 20px; /* Bring the items closer to the "Our Range" heading */
+}
